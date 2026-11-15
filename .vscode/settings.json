@@ -1,0 +1,73 @@
+
+{
+    // ============================================
+    // LATEX WORKSHOP - GRUNDEINSTELLUNGEN
+    // ============================================
+
+    // PDF direkt in VS Code anzeigen
+    "latex-workshop.view.pdf.viewer": "tab",
+
+    // Automatisch beim Speichern kompilieren
+    "latex-workshop.latex.autoBuild.run": "onSave",
+
+    // Standard-Rezept für den Build
+    "latex-workshop.latex.recipe.default": "latexmk",
+
+
+    // ============================================
+    // AUSGABEVERZEICHNISSE
+    // ============================================
+
+    // Fertige PDF im Root-Verzeichnis
+    "latex-workshop.latex.outDir": "%DIR%",
+
+    // Hilfsdateien im build-Ordner
+    "latex-workshop.latex.auxDir": "%DIR%/build",
+
+
+    // ============================================
+    // BUILD-WERKZEUGE
+    // ============================================
+
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-auxdir=%DIR%/build",
+                "-outdir=%DIR%",
+                "-shell-escape",
+                "%DOC%"
+            ]
+        }
+    ],
+
+
+    // ============================================
+    // BUILD-REZEPTE
+    // ============================================
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+
+
+    // ============================================
+    // PDF UND SYNCTEX
+    // ============================================
+
+    // Nach dem Build PDF aktualisieren
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
+
+    // Synchronisierung von LaTeX und PDF
+    "latex-workshop.synctex.afterBuild.enabled": true
+}

@@ -1,0 +1,192 @@
+
+##################################################
+# LATEX - GITIGNORE
+##################################################
+
+
+##################################################
+# 1. LATEX - HILFSDATEIEN
+##################################################
+
+# Temporäre Dateien des LaTeX-Compilers
+*.aux
+*.log
+*.out
+*.toc
+
+# Verzeichnisse für Abbildungen und Tabellen
+*.lof
+*.lot
+
+# Weitere LaTeX-Hilfsdateien
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz\(busy\)
+*.xdv
+*.dvi
+
+# Dateien für Querverweise und Referenzen
+*.xref
+*.brf
+
+
+##################################################
+# 2. LITERATURVERZEICHNIS - BIBER / BIBLATEX
+##################################################
+
+# Temporäre Dateien für Biber
+*.bcf
+*.bbl
+*.blg
+
+# Biber-Cache und Hilfsdateien
+*.run.xml
+
+# Temporäre Bibliografiedateien
+*.bbl-SAVE-ERROR
+
+
+##################################################
+# 3. ABKÜRZUNGEN / GLOSSARE / INDEX
+##################################################
+
+# Glossare
+*.glo
+*.gls
+*.glg
+*.glsdefs
+*.ist
+
+# Abkürzungsverzeichnis
+*.acn
+*.acr
+*.alg
+
+# Weitere Glossar-Hilfsdateien
+*.slo
+*.sls
+*.slg
+
+# Index
+*.idx
+*.ind
+*.ilg
+
+
+##################################################
+# 4. MINTED - SYNTAX HIGHLIGHTING
+##################################################
+
+# Generierte Cache-Verzeichnisse von minted
+_minted-*/
+_minted/
+minted-cache/
+
+# Temporäre Dateien neuerer minted-Versionen
+*.pyg
+*.pygtex
+*.listing
+
+
+##################################################
+# 5. LATEXMK / BUILD
+##################################################
+
+# Build-Verzeichnisse
+/build/
+/out/
+/output/
+/tmp/
+/temp/
+
+# Zusätzliche latexmk-Dateien
+*.fdb_latexmk
+*.latexmk
+
+
+##################################################
+# 6. PDF-AUSGABE
+##################################################
+
+# Generierte PDF-Dateien standardmäßig ignorieren
+*.pdf
+
+# Optional: Bestimmte PDFs trotzdem versionieren
+# !VerteilteSysteme.pdf
+
+# Optional: PDF-Dateien im Ressourcenordner erlauben
+# !resources/**/*.pdf
+
+
+##################################################
+# 7. EDITOREN / IDEs
+##################################################
+
+# VS Code:
+# Persönliche Einstellungen ignorieren
+.vscode/*
+
+# Gemeinsame Projekteinstellungen versionieren
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# JetBrains / IntelliJ
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.#*
+
+# Temporäre Editor-Dateien
+*.bak
+*.tmp
+*.temp
+
+
+##################################################
+# 8. BETRIEBSSYSTEM
+##################################################
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+.Trash-*/
+
+
+##################################################
+# 9. SONSTIGE TEMPORÄRE DATEIEN
+##################################################
+
+# Python-Cache, z. B. bei minted/Pygments
+__pycache__/
+*.pyc
+
+# Backup-Dateien
+*.backup
+*.old
+*.orig
+
+# Lock- und temporäre Dateien
+*.lock
+*.lock~
+
+# Ausnahme: Abhängigkeits- oder Projekt-Lockdateien
+# bei Bedarf gezielt wieder freigeben

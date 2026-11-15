@@ -1,0 +1,69 @@
+\documentclass[12pt, bibliography=totoc, listof=totoc]{scrartcl}
+
+% Pakete und globale Einstellungen
+\input{preamble.tex}
+
+
+\begin{document}
+
+% ==============================================
+% TITELSEITE
+% ==============================================
+\subfile{sections/titlepage/titlepage.tex}
+% PDF-Seitenanker vorübergehend deaktivieren
+\hypersetup{pageanchor=false}
+
+
+% ==============================================
+% VERZEICHNISSE & Abstract - RÖMISCHE SEITENZAHLEN
+% ==============================================
+\pagenumbering{roman}
+% PDF-Seitenanker wieder aktivieren
+\hypersetup{pageanchor=true}
+
+% Inhaltsverzeichnis
+\tableofcontents
+\clearpage
+
+% Abbildungsverzeichnis
+\listoffigures
+
+% Tabellenverzeichnis
+\listoftables
+\clearpage
+
+% Abkürzungsverzeichnis
+\subfile{sections/abbreviations/abbreviations.tex}
+\clearpage
+
+% ZUSAMMENFASSUNG / Abstract
+\subfile{sections/abstract/abstract.tex}
+\clearpage
+
+% ==============================================
+% HAUPTTEIL - ARABISCHE SEITENZAHLEN
+% ==============================================
+\pagenumbering{arabic}
+
+% Einleitung
+\subfile{sections/01-introduction/introduction.tex}
+\clearpage
+
+% Grundlagen
+\subfile{sections/02-essentials/essentials.tex}
+\clearpage
+
+% Diskussion
+\subfile{sections/03-discussion/discussion.tex}
+\clearpage
+
+% Schluss
+\subfile{sections/04-finish/finish.tex}
+\clearpage
+
+% ==============================================
+% LITERATURVERZEICHNIS
+% ==============================================
+\printbibliography
+
+\end{document}

@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SPRACHE UND SCHRIFT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% UTF-8-Zeichenkodierung der Quelldateien
+\usepackage[utf8]{inputenc}
+
+% Deutsche Silbentrennung, Übersetzungen und Typografie
+\usepackage[ngerman]{babel}
+
+% T1-Schriftkodierung für korrekte Darstellung europäischer Zeichen
+\usepackage[T1]{fontenc}
+
+% Latin-Modern-Schrift
+\usepackage{lmodern}
+% Sprachabhängige Anführungszeichen
+\usepackage{csquotes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SEITENLAYOUT UND ABSTÄNDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Einstellung von Seitenrändern und Papierformat
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    margin=3cm
+}
+
+% Ermöglicht die Einstellung des Zeilenabstands
+\usepackage[onehalfspacing]{setspace}
+
+% Verbesserte Positionierung von Floats
+\usepackage{dblfloatfix}
+
+% Ermöglicht Bilder, die von Text umflossen werden
+\usepackage{wrapfig}
+
+% Blocksatz und zusätzliche Textausrichtungen
+\usepackage{ragged2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABELLEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tabellen mit automatisch angepasster Spaltenbreite
+\usepackage{tabularx}
+
+% Tabellen über mehrere Seiten
+\usepackage{longtable}
+
+% Erweiterte Tabellenfunktionen und eigene Spaltentypen
+\usepackage{array}
+
+% Tabellenzellen über mehrere Zeilen
+\usepackage{multirow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LISTEN UND AUFZÄHLUNGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Erweiterte Nummerierung von enumerate-Umgebungen
+\usepackage{enumerate}
+
+% Flexible Konfiguration von itemize, enumerate und description
+\usepackage{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MATHEMATIK UND THEOREME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Erweiterte mathematische Umgebungen und Befehle
+\usepackage{amsmath}
+
+% Definition und Nummerierung von Sätzen, Definitionen etc.
+\usepackage[
+    thmmarks,
+    amsmath,
+    hyperref,
+    noconfig
+]{ntheorem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BILDER UND GRAFIKEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Einfügen und Skalieren von Bildern
+\usepackage{graphicx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FARBEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Erweiterte Farbunterstützung, auch für Tabellen
+\usepackage[table]{xcolor}
+
+% Eigene Farben
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+% Telekom-Magenta
+% RGB-Werte müssen zwischen 0 und 1 liegen.
+\definecolor{magenta}{RGB}{226,0,116}
+
+% Hintergrundfarbe für Code-Listings
+\definecolor{backcolour}{RGB}{245,245,245}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUELLCODE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Quellcode mit Syntax-Highlighting über Pygments
+% Benötigt bei pdflatex normalerweise -shell-escape
+\usepackage{minted}
+
+% Quellcode direkt mit LaTeX darstellen
+\usepackage{listings}
+
+% Globale Einstellungen für listings
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    firstnumber=1,
+    stepnumber=1,
+    numbersep=8pt,
+    numbers=left,
+    breaklines=true,
+    frame=lines,
+    captionpos=b,
+    numberstyle=\tiny\color{gray},
+    columns=fullflexible,
+    showstringspaces=false,
+    backgroundcolor=\color{backcolour},
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LITERATURVERZEICHNIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Literaturverwaltung mit Biber im IEEE-Stil
+\usepackage[
+    backend=biber,
+    style=ieee,
+    sorting=none
+]{biblatex}
+
+% BibTeX-Datei
+\addbibresource{./quellen/quellen.bib}
+
+
+% Formatierung des BibTeX-Schriftzugs
+\def\BibTeX{%
+    {\rm B\kern-.05em%
+            {\sc i\kern-.025em b}\kern-.08em%
+        T\kern-.1667em%
+        \lower.7ex\hbox{E}\kern-.125emX}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOKUMENTSTRUKTUR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Einbinden einzelner LaTeX-Dateien als Subfiles
+\usepackage{subfiles}
+
+% Verwaltung eines Abkürzungsverzeichnisses
+% printonlyused zeigt nur tatsächlich verwendete Abkürzungen
+\usepackage[printonlyused]{acronym}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% URLs UND HYPERLINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Verbesserte Darstellung und Zeilenumbrüche von URLs
+\usepackage{url}
+
+% Klickbare Links, Verweise und Literaturzitate
+% Sollte möglichst spät geladen werden.
+\usepackage[
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=blue,
+    citecolor=codepurple,
+    menucolor=red,
+    runcolor=cyan
+]{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Satz-Umgebung mit Nummerierung nach Abschnitt
+% Beispiel: Satz 2.1
+\newtheorem{satz}{Satz}[section]
+
+% Normaler statt kursiver Text innerhalb der Theorem-Umgebungen
+\theorembodyfont{\upshape}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EIGENE TABELLENTYPEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Eigener Spaltentyp "x"
+\newcolumntype{x}[1]{%
+    !{\centering\arraybackslash\vrule width #1}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KOPF- UND FUSSZEILE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{scrlayer-scrpage}
+
+% Bestehende Kopf- und Fußzeilen entfernen
+\clearpairofpagestyles
+
+% Zentrierte Seitenzahl
+\cfoot*{\pagemark}
+
+% Seitenstil aktivieren
+\pagestyle{scrheadings}
